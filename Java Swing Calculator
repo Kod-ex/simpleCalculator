@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +13,11 @@ import javax.swing.JLabel;
 public class Calculator {
 
 	private JFrame Calculator;
+	private double firstOperand;
+	private double secondOperand;
+	private double result;
+	private String operation;
+	private String answer;
 
 	/**
 	 * Launch the application.
@@ -62,7 +66,7 @@ public class Calculator {
 		JLabel lblOperands = new JLabel("");
 		lblOperands.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblOperands.setForeground(Color.WHITE);
-		lblOperands.setBounds(186, 91, 67, 14);
+		lblOperands.setBounds(10, 93, 243, 14);
 		contentPane.add(lblOperands);
 		
 		JButton btnZero = new JButton("0");
@@ -265,7 +269,9 @@ public class Calculator {
 		btnMultiplication.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				firstOperand = Double.parseDouble(lblOperands.getText());
+				lblOperands.setText(lblOperands.getText() + "x");
+				operation = "x";
 			}
 		});
 		contentPane.add(btnMultiplication);
@@ -280,6 +286,9 @@ public class Calculator {
 		btnDivision.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				firstOperand = Double.parseDouble(lblOperands.getText());
+				lblOperands.setText(lblOperands.getText() + "/");
+				operation = "/";
 				
 			}
 		});
@@ -295,7 +304,9 @@ public class Calculator {
 		btnSubtracttion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				firstOperand = Double.parseDouble(lblOperands.getText());
+				lblOperands.setText(lblOperands.getText() + "-");
+				operation = "-";
 			}
 		});
 		contentPane.add(btnSubtracttion);
@@ -310,7 +321,9 @@ public class Calculator {
 		btnAddition.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				firstOperand = Double.parseDouble(lblOperands.getText());
+				lblOperands.setText(lblOperands.getText() + "+");
+				operation = "+";
 			}
 		});
 		contentPane.add(btnAddition);
@@ -325,7 +338,9 @@ public class Calculator {
 		btnPercentage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				firstOperand = Double.parseDouble(lblOperands.getText());
+				lblOperands.setText(lblOperands.getText() + "%");
+				operation = "%";
 			}
 		});
 		contentPane.add(btnPercentage);
@@ -340,7 +355,35 @@ public class Calculator {
 		btnEquals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				lblOperands.setText(lblOperands.getText() + "=");
+				operation = "=";
 				
+				secondOperand = Double.parseDouble(lblOperands.getText());
+				
+				if (operation == "+") {
+					
+					result = firstOperand + secondOperand;
+					answer = String.format("%2f", result);
+					lblOperands.setText(answer);
+				}
+				else if (operation == "-") {
+
+					result = firstOperand - secondOperand;
+					answer = String.format("%2f", result);
+					lblOperands.setText(answer);
+				}
+				else if (operation == "x") {
+					
+					result = firstOperand * secondOperand;
+					answer = String.format("%2f", result);
+					lblOperands.setText(answer);
+				}
+				else if (operation == "/") {
+					
+					result = firstOperand / secondOperand;
+					answer = String.format("%2f", result);
+					lblOperands.setText(answer);
+				}
 			}
 		});
 		contentPane.add(btnEquals);
