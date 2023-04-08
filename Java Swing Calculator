@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -58,145 +59,18 @@ public class Calculator {
 		Calculator.getContentPane().add(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnSeven = new JButton("7");
-		btnSeven.setBounds(10, 231, 60, 54);
-		btnSeven.setForeground(new Color(255, 255, 255));
-		btnSeven.setBackground(new Color(35, 37, 45));
-		btnSeven.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnSeven.setFocusPainted(false);
-		btnSeven.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnSeven.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnSeven);
-		
-		JButton btnEight = new JButton("8");
-		btnEight.setBounds(71, 231, 60, 54);
-		btnEight.setForeground(new Color(255, 255, 255));
-		btnEight.setBackground(new Color(35, 37, 45));
-		btnEight.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnEight.setFocusPainted(false);
-		btnEight.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnEight.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnEight);
-		
-		JButton btnNine = new JButton("9");
-		btnNine.setBounds(132, 231, 60, 54);
-		btnNine.setForeground(new Color(255, 255, 255));
-		btnNine.setBackground(new Color(35, 37, 45));
-		btnNine.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnNine.setFocusPainted(false);
-		btnNine.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNine.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnNine);
-		
-		JButton btnFour = new JButton("4");
-		btnFour.setBounds(10, 286, 60, 54);
-		btnFour.setForeground(new Color(255, 255, 255));
-		btnFour.setBackground(new Color(35, 37, 45));
-		btnFour.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnFour.setFocusPainted(false);
-		btnFour.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnFour.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnFour);
-		
-		JButton btnFive = new JButton("5");
-		btnFive.setBounds(71, 286, 60, 54);
-		btnFive.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnFive.setForeground(new Color(255, 255, 255));
-		btnFive.setBackground(new Color(35, 37, 45));
-		btnFive.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnFive.setFocusPainted(false);
-		btnFive.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnFive.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnFive);
-		
-		JButton btnSix = new JButton("6");
-		btnSix.setBounds(132, 286, 60, 54);
-		btnSix.setForeground(new Color(255, 255, 255));
-		btnSix.setBackground(new Color(35, 37, 45));
-		btnSix.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnSix.setFocusPainted(false);
-		btnSix.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnSix.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnSix);
-		
-		JButton btnOne = new JButton("1");
-		btnOne.setBounds(10, 341, 60, 54);
-		btnOne.setForeground(new Color(255, 255, 255));
-		btnOne.setBackground(new Color(35, 37, 45));
-		btnOne.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnOne.setFocusPainted(false);
-		btnOne.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnOne.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnOne);
-		
-		JButton btnTwo = new JButton("2");
-		btnTwo.setBounds(71, 341, 60, 54);
-		btnTwo.setForeground(new Color(255, 255, 255));
-		btnTwo.setBackground(new Color(35, 37, 45));
-		btnTwo.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnTwo.setFocusPainted(false);
-		btnTwo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnTwo.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(btnTwo);
-		
-		JButton btnThree = new JButton("3");
-		btnThree.setBounds(132, 341, 60, 54);
-		btnThree.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnThree.setForeground(new Color(255, 255, 255));
-		btnThree.setBackground(new Color(35, 37, 45));
-		btnThree.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnThree.setAutoscrolls(true);
-		btnThree.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnThree.setFocusPainted(false);
-		contentPane.add(btnThree);
-		
-		JButton btnPositiveNegative = new JButton("+/-");
-		btnPositiveNegative.setBounds(10, 396, 60, 54);
-		btnPositiveNegative.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnPositiveNegative.setForeground(new Color(255, 255, 255));
-		btnPositiveNegative.setBackground(new Color(35, 37, 45));
-		btnPositiveNegative.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnPositiveNegative.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnPositiveNegative.setFocusPainted(false);
-		contentPane.add(btnPositiveNegative);
+		JLabel lblOperands = new JLabel("");
+		lblOperands.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblOperands.setForeground(Color.WHITE);
+		lblOperands.setBounds(186, 91, 67, 14);
+		contentPane.add(lblOperands);
 		
 		JButton btnZero = new JButton("0");
 		btnZero.setBounds(71, 396, 60, 54);
 		btnZero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "0");
 			}
 		});
 		btnZero.setForeground(new Color(255, 255, 255));
@@ -208,28 +82,192 @@ public class Calculator {
 		
 		JButton btnDecimalPoint = new JButton(".");
 		btnDecimalPoint.setBounds(132, 396, 60, 54);
-		btnDecimalPoint.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnDecimalPoint.setForeground(new Color(255, 255, 255));
 		btnDecimalPoint.setBackground(new Color(35, 37, 45));
 		btnDecimalPoint.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
 		btnDecimalPoint.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnDecimalPoint.setFocusPainted(false);
+		btnDecimalPoint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + ".");
+			}
+		});
 		contentPane.add(btnDecimalPoint);
+		
+		JButton btnOne = new JButton("1");
+		btnOne.setBounds(10, 341, 60, 54);
+		btnOne.setForeground(new Color(255, 255, 255));
+		btnOne.setBackground(new Color(35, 37, 45));
+		btnOne.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnOne.setFocusPainted(false);
+		btnOne.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnOne.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "1");
+			}
+		});
+		contentPane.add(btnOne);
+		
+		JButton btnTwo = new JButton("2");
+		btnTwo.setBounds(71, 341, 60, 54);
+		btnTwo.setForeground(new Color(255, 255, 255));
+		btnTwo.setBackground(new Color(35, 37, 45));
+		btnTwo.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnTwo.setFocusPainted(false);
+		btnTwo.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTwo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "2");
+			}
+		});
+		contentPane.add(btnTwo);
+		
+		JButton btnThree = new JButton("3");
+		btnThree.setBounds(132, 341, 60, 54);
+		btnThree.setForeground(new Color(255, 255, 255));
+		btnThree.setBackground(new Color(35, 37, 45));
+		btnThree.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnThree.setAutoscrolls(true);
+		btnThree.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnThree.setFocusPainted(false);
+		btnThree.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "3");
+			}
+		});
+		contentPane.add(btnThree);
+		
+		JButton btnFour = new JButton("4");
+		btnFour.setBounds(10, 286, 60, 54);
+		btnFour.setForeground(new Color(255, 255, 255));
+		btnFour.setBackground(new Color(35, 37, 45));
+		btnFour.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnFour.setFocusPainted(false);
+		btnFour.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnFour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "4");
+			}
+		});
+		contentPane.add(btnFour);
+		
+		JButton btnFive = new JButton("5");
+		btnFive.setBounds(71, 286, 60, 54);
+		btnFive.setForeground(new Color(255, 255, 255));
+		btnFive.setBackground(new Color(35, 37, 45));
+		btnFive.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnFive.setFocusPainted(false);
+		btnFive.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnFive.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "5");
+			}
+		});
+		contentPane.add(btnFive);
+		
+		JButton btnSix = new JButton("6");
+		btnSix.setBounds(132, 286, 60, 54);
+		btnSix.setForeground(new Color(255, 255, 255));
+		btnSix.setBackground(new Color(35, 37, 45));
+		btnSix.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnSix.setFocusPainted(false);
+		btnSix.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnSix.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "6");
+			}
+		});
+		contentPane.add(btnSix);
+		
+		JButton btnSeven = new JButton("7");
+		btnSeven.setBounds(10, 231, 60, 54);
+		btnSeven.setForeground(new Color(255, 255, 255));
+		btnSeven.setBackground(new Color(35, 37, 45));
+		btnSeven.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnSeven.setFocusPainted(false);
+		btnSeven.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnSeven.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "7");
+			}
+		});
+		contentPane.add(btnSeven);
+		
+		JButton btnEight = new JButton("8");
+		btnEight.setBounds(71, 231, 60, 54);
+		btnEight.setForeground(new Color(255, 255, 255));
+		btnEight.setBackground(new Color(35, 37, 45));
+		btnEight.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnEight.setFocusPainted(false);
+		btnEight.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnEight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "8");
+			}
+		});
+		contentPane.add(btnEight);
+		
+		JButton btnNine = new JButton("9");
+		btnNine.setBounds(132, 231, 60, 54);
+		btnNine.setForeground(new Color(255, 255, 255));
+		btnNine.setBackground(new Color(35, 37, 45));
+		btnNine.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnNine.setFocusPainted(false);
+		btnNine.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblOperands.setText(lblOperands.getText() + "9");
+			}
+		});
+		contentPane.add(btnNine);
+		
+		JButton btnPositiveNegative = new JButton("+/-");
+		btnPositiveNegative.setBounds(10, 396, 60, 54);
+		btnPositiveNegative.setForeground(new Color(255, 255, 255));
+		btnPositiveNegative.setBackground(new Color(35, 37, 45));
+		btnPositiveNegative.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnPositiveNegative.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnPositiveNegative.setFocusPainted(false);
+		btnPositiveNegative.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String operand = lblOperands.getText();
+				
+				if(operand.startsWith("-")) {
+					operand = operand.substring(1);
+				}
+				else {
+					operand = "-" + operand;
+				}
+				
+				lblOperands.setText(operand);
+			}
+		});
+		contentPane.add(btnPositiveNegative);
 		
 		JButton btnMultiplication = new JButton("x");
 		btnMultiplication.setBounds(193, 231, 60, 54);
 		btnMultiplication.setForeground(new Color(160, 161, 163));
 		btnMultiplication.setBackground(new Color(35, 37, 45));
 		btnMultiplication.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnMultiplication.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnMultiplication.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnMultiplication.setFocusPainted(false);
+		btnMultiplication.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		contentPane.add(btnMultiplication);
 		
 		JButton btnDivision = new JButton("/");
@@ -237,12 +275,14 @@ public class Calculator {
 		btnDivision.setForeground(new Color(160, 161, 163));
 		btnDivision.setBackground(new Color(35, 37, 45));
 		btnDivision.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnDivision.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnDivision.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnDivision.setFocusPainted(false);
+		btnDivision.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		contentPane.add(btnDivision);
 		
 		JButton btnSubtracttion = new JButton("-");
@@ -250,12 +290,14 @@ public class Calculator {
 		btnSubtracttion.setForeground(new Color(160, 161, 163));
 		btnSubtracttion.setBackground(new Color(35, 37, 45));
 		btnSubtracttion.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnSubtracttion.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnSubtracttion.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnSubtracttion.setFocusPainted(false);
+		btnSubtracttion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		contentPane.add(btnSubtracttion);
 		
 		JButton btnAddition = new JButton("+");
@@ -263,26 +305,45 @@ public class Calculator {
 		btnAddition.setForeground(new Color(160, 161, 163));
 		btnAddition.setBackground(new Color(35, 37, 45));
 		btnAddition.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
-		btnAddition.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnAddition.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnAddition.setFocusPainted(false);
+		btnAddition.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		contentPane.add(btnAddition);
 		
 		JButton btnPercentage = new JButton("%");
-		btnPercentage.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnPercentage.setForeground(Color.WHITE);
 		btnPercentage.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnPercentage.setFocusPainted(false);
 		btnPercentage.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
 		btnPercentage.setBackground(new Color(35, 37, 45));
 		btnPercentage.setBounds(132, 175, 60, 54);
+		btnPercentage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		contentPane.add(btnPercentage);
+		
+		JButton btnEquals = new JButton("=");
+		btnEquals.setBounds(193, 396, 60, 54);
+		btnEquals.setForeground(new Color(255, 255, 255));
+		btnEquals.setBackground(new Color(255, 128, 0));
+		btnEquals.setBorder(BorderFactory.createLineBorder(new Color(255, 128, 0)));
+		btnEquals.setFont(new Font("Ebrima", Font.PLAIN, 15));
+		btnEquals.setFocusPainted(false);
+		btnEquals.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		contentPane.add(btnEquals);
 		
 		JButton btnAllClear = new JButton("AC");
 		btnAllClear.setForeground(Color.WHITE);
@@ -291,6 +352,12 @@ public class Calculator {
 		btnAllClear.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
 		btnAllClear.setBackground(new Color(35, 37, 45));
 		btnAllClear.setBounds(10, 175, 60, 54);
+		btnAllClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+			}
+		});
 		contentPane.add(btnAllClear);
 		
 		JButton btnClear = new JButton("C");
@@ -300,26 +367,13 @@ public class Calculator {
 		btnClear.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
 		btnClear.setBackground(new Color(35, 37, 45));
 		btnClear.setBounds(71, 175, 60, 54);
-		contentPane.add(btnClear);
-		
-		JLabel lblFormula = new JLabel("New label");
-		lblFormula.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblFormula.setForeground(Color.WHITE);
-		lblFormula.setBounds(186, 91, 67, 14);
-		contentPane.add(lblFormula);
-		
-		JButton btnEquals = new JButton("=");
-		btnEquals.setBounds(193, 396, 60, 54);
-		btnEquals.setForeground(new Color(255, 255, 255));
-		btnEquals.setBackground(new Color(255, 128, 0));
-		btnEquals.setBorder(BorderFactory.createLineBorder(new Color(255, 128, 0)));
-		btnEquals.addActionListener(new ActionListener() {
+		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				
 			}
 		});
-		btnEquals.setFont(new Font("Ebrima", Font.PLAIN, 15));
-		btnEquals.setFocusPainted(false);
-		contentPane.add(btnEquals);
+		contentPane.add(btnClear);
 		
 	}
 }
