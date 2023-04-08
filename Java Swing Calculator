@@ -14,8 +14,10 @@ import javax.swing.JLabel;
 public class Calculator {
 
 	private JFrame Calculator;
+	
 	double first, second, result;
-	String operation, answer; 
+	String operation, answer;
+
 	
 	/**
 	 * Launch the application.
@@ -72,8 +74,8 @@ public class Calculator {
 		btnZero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String number = lblOperands.getText() + btnZero.getText();				
-				lblOperands.setText(number);	
+				String number = lblOperands.getText() + btnZero.getText();
+				lblOperands.setText(number);
 			}
 		});
 		btnZero.setForeground(new Color(255, 255, 255));
@@ -238,8 +240,7 @@ public class Calculator {
 		btnDecimalPoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String decimalPoint = lblOperands.getText() + btnDecimalPoint.getText();
-				lblOperands.setText(decimalPoint);
+			
 			}
 		});
 		contentPane.add(btnDecimalPoint);
@@ -279,8 +280,8 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				
 				first = Double.parseDouble(lblOperands.getText());
-				lblOperands.setText(lblOperands.getText() + "x");
-				operation = "x";
+				lblOperands.setText("");
+				operation = "*";
 			}
 		});
 		contentPane.add(btnMultiplication);
@@ -296,7 +297,7 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				
 				first = Double.parseDouble(lblOperands.getText());
-				lblOperands.setText(lblOperands.getText() + "/");
+				lblOperands.setText("");
 				operation = "/";
 			}
 		});
@@ -313,7 +314,7 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				
 				first = Double.parseDouble(lblOperands.getText());
-				lblOperands.setText(lblOperands.getText() + "-");
+				lblOperands.setText("");
 				operation = "-";
 			}
 		});
@@ -328,10 +329,11 @@ public class Calculator {
 		btnAddition.setFocusPainted(false);
 		btnAddition.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+			
 				first = Double.parseDouble(lblOperands.getText());
-				lblOperands.setText(lblOperands.getText() + "+");
+				lblOperands.setText("");
 				operation = "+";
+				
 			}
 		});
 		contentPane.add(btnAddition);
@@ -347,7 +349,7 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				
 				first = Double.parseDouble(lblOperands.getText());
-				lblOperands.setText(lblOperands.getText() + "%");
+				lblOperands.setText("");
 				operation = "%";
 			}
 		});
@@ -363,8 +365,6 @@ public class Calculator {
 		btnEquals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				lblOperands.setText(lblOperands.getText() + "=");
-				
 				second = Double.parseDouble(lblOperands.getText());
 				
 				if (operation == "+") {
@@ -379,7 +379,7 @@ public class Calculator {
 					answer = String.format("%2f", result);
 					lblOperands.setText(answer);
 				}
-				else if (operation == "x") {
+				else if (operation == "*") {
 					
 					result = first * second;
 					answer = String.format("%2f", result);
@@ -410,8 +410,8 @@ public class Calculator {
 		btnAllClear.setBounds(10, 175, 60, 54);
 		btnAllClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				lblOperands.setText(null);
+				
+				lblOperands.setText("");
 			}
 		});
 		contentPane.add(btnAllClear);
@@ -426,7 +426,15 @@ public class Calculator {
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-	
+				String Clear = "null";
+				
+				if (lblOperands.getText().length() > 0) {
+					
+					StringBuilder str = new StringBuilder(lblOperands.getText());
+					str.deleteCharAt(lblOperands.getText().length() - 1);
+					Clear = str.toString();
+					lblOperands.setText(Clear);
+				}
 			}
 		});
 		contentPane.add(btnClear);
