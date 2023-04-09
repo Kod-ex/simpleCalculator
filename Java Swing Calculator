@@ -96,7 +96,7 @@ public class Calculator {
 		btnOne.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				expressionBuilder.append("0");
+				expressionBuilder.append("1");
 		        lblDisplay.setText(expressionBuilder.toString());
 				
 			}
@@ -395,6 +395,9 @@ public class Calculator {
 		            answer = String.format("%.2f", result);
 		        }
 		        lblDisplay.setText(answer);
+		        String expression = expressionBuilder.toString();
+		        lblDisplay.setText(expression + " = " + result);
+		        expressionBuilder.setLength(0);
 		        btnDecimalPoint.setEnabled(false);
 				
 			}
