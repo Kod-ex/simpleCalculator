@@ -1,43 +1,436 @@
-				String displayText = lblDisplay.getText();
-		        String[] tokens = displayText.split(" ");
-		        
-		        double result = 0;
-		        try {
-		            result = Double.parseDouble(tokens[0]);
-		        } catch (NumberFormatException ex) {
-		        	
-		        }
-		        
-		        for (int i = 1; i < tokens.length; i+=2) {
-		            double operand = Double.parseDouble(tokens[i+1]);
-		            switch(tokens[i]) {
-		                case "+":
-		                    result += operand;
-		                    break;
-		                case "-":
-		                    result -= operand;
-		                    break;
-		                case "*":
-		                    result *= operand;
-		                    break;
-		                case "/":
-		                    result /= operand;
-		                    break;
-		                case "%":
-		                    result %= operand;
-		                    break;
-		            }
-		        }
-		        
-		        String answer;
-		        if (Double.toString(result).contains(".") || displayText.contains(".")) {
-		            answer = String.format("%.2f", result);
-		        } else {
-		            answer = String.format("%.0f", result);
-		        }
-		        
-		        lblDisplay.setText(displayText + " = " + answer);
-		        btnDecimalPoint.setEnabled(false);
-		        
-		    }
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+public class Calculator {
+
+	private JFrame Calculator;
+	
+	double first, second, result;
+	String operation, answer;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calculator window = new Calculator();
+					window.Calculator.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 		});
+	}
+
+	public Calculator() {
+		initialize();
+	}
+
+	private void initialize() {
+		
+		Calculator = new JFrame();
+		Calculator.setForeground(Color.DARK_GRAY);
+		Calculator.setTitle("Calculator");
+		Calculator.setBackground(Color.DARK_GRAY);
+		Calculator.setBounds(100, 100, 279, 500);
+		Calculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Calculator.getContentPane().setLayout(null);
+		Calculator.setLocationRelativeTo(null);
+		
+		JPanel contentPane = new JPanel();
+		contentPane.setBackground(new Color(35, 37, 45));
+		contentPane.setForeground(Color.DARK_GRAY);
+		contentPane.setBounds(0, 0, 263, 461);
+		Calculator.getContentPane().add(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblDisplay = new JLabel("");
+		lblDisplay.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblDisplay.setForeground(Color.WHITE);
+		lblDisplay.setBounds(10, 93, 243, 14);
+		contentPane.add(lblDisplay);
+		
+		JButton btnZero = new JButton("0");
+		btnZero.setBounds(71, 396, 60, 54);
+		btnZero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnZero.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		btnZero.setForeground(new Color(255, 255, 255));
+		btnZero.setBackground(new Color(35, 37, 45));
+		btnZero.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnZero.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnZero.setFocusPainted(false);
+		contentPane.add(btnZero);
+		
+		JButton btnOne = new JButton("1");
+		btnOne.setBounds(10, 341, 60, 54);
+		btnOne.setForeground(new Color(255, 255, 255));
+		btnOne.setBackground(new Color(35, 37, 45));
+		btnOne.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnOne.setFocusPainted(false);
+		btnOne.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnOne.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnOne.getText();
+				lblDisplay.setText(number);
+				
+			}
+		});
+		contentPane.add(btnOne);
+		
+		JButton btnTwo = new JButton("2");
+		btnTwo.setBounds(71, 341, 60, 54);
+		btnTwo.setForeground(new Color(255, 255, 255));
+		btnTwo.setBackground(new Color(35, 37, 45));
+		btnTwo.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnTwo.setFocusPainted(false);
+		btnTwo.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTwo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnTwo.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnTwo);
+		
+		JButton btnThree = new JButton("3");
+		btnThree.setBounds(132, 341, 60, 54);
+		btnThree.setForeground(new Color(255, 255, 255));
+		btnThree.setBackground(new Color(35, 37, 45));
+		btnThree.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnThree.setAutoscrolls(true);
+		btnThree.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnThree.setFocusPainted(false);
+		btnThree.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnThree.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnThree);
+		
+		JButton btnFour = new JButton("4");
+		btnFour.setBounds(10, 286, 60, 54);
+		btnFour.setForeground(new Color(255, 255, 255));
+		btnFour.setBackground(new Color(35, 37, 45));
+		btnFour.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnFour.setFocusPainted(false);
+		btnFour.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnFour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnFour.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnFour);
+		
+		JButton btnFive = new JButton("5");
+		btnFive.setBounds(71, 286, 60, 54);
+		btnFive.setForeground(new Color(255, 255, 255));
+		btnFive.setBackground(new Color(35, 37, 45));
+		btnFive.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnFive.setFocusPainted(false);
+		btnFive.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnFive.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnFive.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnFive);
+		
+		JButton btnSix = new JButton("6");
+		btnSix.setBounds(132, 286, 60, 54);
+		btnSix.setForeground(new Color(255, 255, 255));
+		btnSix.setBackground(new Color(35, 37, 45));
+		btnSix.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnSix.setFocusPainted(false);
+		btnSix.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnSix.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnSix.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnSix);
+		
+		JButton btnSeven = new JButton("7");
+		btnSeven.setBounds(10, 231, 60, 54);
+		btnSeven.setForeground(new Color(255, 255, 255));
+		btnSeven.setBackground(new Color(35, 37, 45));
+		btnSeven.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnSeven.setFocusPainted(false);
+		btnSeven.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnSeven.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnSeven.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnSeven);
+		
+		JButton btnEight = new JButton("8");
+		btnEight.setBounds(71, 231, 60, 54);
+		btnEight.setForeground(new Color(255, 255, 255));
+		btnEight.setBackground(new Color(35, 37, 45));
+		btnEight.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnEight.setFocusPainted(false);
+		btnEight.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnEight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnEight.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnEight);
+		
+		JButton btnNine = new JButton("9");
+		btnNine.setBounds(132, 231, 60, 54);
+		btnNine.setForeground(new Color(255, 255, 255));
+		btnNine.setBackground(new Color(35, 37, 45));
+		btnNine.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnNine.setFocusPainted(false);
+		btnNine.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String number = lblDisplay.getText() + btnNine.getText();
+				lblDisplay.setText(number);
+			}
+		});
+		contentPane.add(btnNine);
+		
+		JButton btnDecimalPoint = new JButton(".");
+		btnDecimalPoint.setBounds(132, 396, 60, 54);
+		btnDecimalPoint.setForeground(new Color(255, 255, 255));
+		btnDecimalPoint.setBackground(new Color(35, 37, 45));
+		btnDecimalPoint.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnDecimalPoint.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnDecimalPoint.setFocusPainted(false);
+		btnDecimalPoint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				 String currentOperand = lblDisplay.getText();
+			        
+			        if (!currentOperand.contains(".")) {
+			            lblDisplay.setText(currentOperand + btnDecimalPoint.getText());
+			        }
+			}        
+		});
+		contentPane.add(btnDecimalPoint);
+		
+		JButton btnPositiveNegative = new JButton("+/-");
+		btnPositiveNegative.setBounds(10, 396, 60, 54);
+		btnPositiveNegative.setForeground(new Color(255, 255, 255));
+		btnPositiveNegative.setBackground(new Color(35, 37, 45));
+		btnPositiveNegative.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnPositiveNegative.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnPositiveNegative.setFocusPainted(false);
+		btnPositiveNegative.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String operand = lblDisplay.getText();
+				
+				if(operand.startsWith("-")) {
+					operand = operand.substring(1);
+				}
+				else {
+					operand = "-" + operand;
+				}
+				
+				lblDisplay.setText(operand);
+			}
+		});
+		contentPane.add(btnPositiveNegative);
+		
+		JButton btnMultiplication = new JButton("x");
+		btnMultiplication.setBounds(193, 231, 60, 54);
+		btnMultiplication.setForeground(new Color(160, 161, 163));
+		btnMultiplication.setBackground(new Color(35, 37, 45));
+		btnMultiplication.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnMultiplication.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnMultiplication.setFocusPainted(false);
+		btnMultiplication.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first = Double.parseDouble(lblDisplay.getText());
+				lblDisplay.setText("");
+				operation = "*";
+			}
+		});
+		contentPane.add(btnMultiplication);
+		
+		JButton btnDivision = new JButton("/");
+		btnDivision.setBounds(193, 175, 60, 54);
+		btnDivision.setForeground(new Color(160, 161, 163));
+		btnDivision.setBackground(new Color(35, 37, 45));
+		btnDivision.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnDivision.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnDivision.setFocusPainted(false);
+		btnDivision.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first = Double.parseDouble(lblDisplay.getText());
+				lblDisplay.setText("");
+				operation = "/";
+			}
+		});
+		contentPane.add(btnDivision);
+		
+		JButton btnSubtracttion = new JButton("-");
+		btnSubtracttion.setBounds(193, 286, 60, 54);
+		btnSubtracttion.setForeground(new Color(160, 161, 163));
+		btnSubtracttion.setBackground(new Color(35, 37, 45));
+		btnSubtracttion.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnSubtracttion.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnSubtracttion.setFocusPainted(false);
+		btnSubtracttion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first = Double.parseDouble(lblDisplay.getText());
+				lblDisplay.setText("");
+				operation = "-";
+			}
+		});
+		contentPane.add(btnSubtracttion);
+		
+		JButton btnAddition = new JButton("+");
+		btnAddition.setBounds(193, 341, 60, 54);
+		btnAddition.setForeground(new Color(160, 161, 163));
+		btnAddition.setBackground(new Color(35, 37, 45));
+		btnAddition.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnAddition.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAddition.setFocusPainted(false);
+		btnAddition.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				first = Double.parseDouble(lblDisplay.getText());
+				lblDisplay.setText("");
+				operation = "+";
+				
+			}
+		});
+		contentPane.add(btnAddition);
+		
+		JButton btnPercentage = new JButton("%");
+		btnPercentage.setForeground(Color.WHITE);
+		btnPercentage.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnPercentage.setFocusPainted(false);
+		btnPercentage.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnPercentage.setBackground(new Color(35, 37, 45));
+		btnPercentage.setBounds(132, 175, 60, 54);
+		btnPercentage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				first = Double.parseDouble(lblDisplay.getText());
+				lblDisplay.setText("");
+				operation = "%";
+			}
+		});
+		contentPane.add(btnPercentage);
+		
+		JButton btnEquals = new JButton("=");
+		btnEquals.setBounds(193, 396, 60, 54);
+		btnEquals.setForeground(new Color(255, 255, 255));
+		btnEquals.setBackground(new Color(255, 128, 0));
+		btnEquals.setBorder(BorderFactory.createLineBorder(new Color(255, 128, 0)));
+		btnEquals.setFont(new Font("Ebrima", Font.PLAIN, 15));
+		btnEquals.setFocusPainted(false);
+		btnEquals.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				second = Double.parseDouble(lblDisplay.getText());
+				
+		        if (operation == "+") {
+		            result = first + second;
+		        } else if (operation == "-") {
+		            result = first - second;
+		        } else if (operation == "*") {
+		            result = first * second;
+		        } else if (operation == "/") {
+		            result = first / second;
+		        } else if (operation == "%") {
+		            result = first % second;
+		        }
+
+		        String answer;
+		        
+		        if (Double.toString(first).contains(".") || Double.toString(second).contains(".")) {
+		            answer = String.format("%.0f", result);
+		        } else {
+		            answer = String.format("%.2f", result);
+		        }
+		        
+		        lblDisplay.setText(answer);
+		        btnDecimalPoint.setEnabled(false);
+				
+			}
+		});
+		contentPane.add(btnEquals);
+		
+		JButton btnAllClear = new JButton("AC");
+		btnAllClear.setForeground(Color.WHITE);
+		btnAllClear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAllClear.setFocusPainted(false);
+		btnAllClear.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnAllClear.setBackground(new Color(35, 37, 45));
+		btnAllClear.setBounds(10, 175, 60, 54);
+		btnAllClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblDisplay.setText("");
+				btnDecimalPoint.setEnabled(true);
+			}
+		});
+		contentPane.add(btnAllClear);
+		
+		JButton btnClear = new JButton("C");
+		btnClear.setForeground(Color.WHITE);
+		btnClear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnClear.setFocusPainted(false);
+		btnClear.setBorder(BorderFactory.createLineBorder(new Color(35, 37, 45)));
+		btnClear.setBackground(new Color(35, 37, 45));
+		btnClear.setBounds(71, 175, 60, 54);
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String Clear = "null";
+				
+				if (lblDisplay.getText().length() > 0) {
+					
+					StringBuilder str = new StringBuilder(lblDisplay.getText());
+					str.deleteCharAt(lblDisplay.getText().length() - 1);
+					Clear = str.toString();
+					lblDisplay.setText(Clear);
+					btnDecimalPoint.setEnabled(true);
+					
+				}
+			}
+		});
+		contentPane.add(btnClear);
+		
+		
+	}
+	
+	
+}
