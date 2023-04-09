@@ -63,7 +63,7 @@ public class Calculator {
 		contentPane.setLayout(null);
 		
 		JLabel lblDisplay = new JLabel("");
-		lblDisplay.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblDisplay.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblDisplay.setForeground(Color.WHITE);
 		lblDisplay.setBounds(10, 93, 243, 14);
 		contentPane.add(lblDisplay);
@@ -239,8 +239,12 @@ public class Calculator {
 		btnDecimalPoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-			
-			}
+				 String currentOperand = lblDisplay.getText();
+			        
+			        if (!currentOperand.contains(".")) {
+			            lblDisplay.setText(currentOperand + btnDecimalPoint.getText());
+			        }
+			}        
 		});
 		contentPane.add(btnDecimalPoint);
 		
@@ -381,9 +385,9 @@ public class Calculator {
 		        String answer;
 		        
 		        if (Double.toString(first).contains(".") || Double.toString(second).contains(".")) {
-		            answer = String.format("%.2f", result);
-		        } else {
 		            answer = String.format("%.0f", result);
+		        } else {
+		            answer = String.format("%.2f", result);
 		        }
 		        lblDisplay.setText(answer);
 				
