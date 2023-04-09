@@ -15,6 +15,9 @@ public class Calculator extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	
+	double first, second, result;
+	String operation, answer;
 
 	/**
 	 * Launch the application.
@@ -211,6 +214,22 @@ public class Calculator extends JFrame {
 		contentPane.add(btnAdd);
 		
 		JButton btnPosNeg = new JButton("+/-");
+		btnPosNeg.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String operand = lblFormula.getText();
+				
+				if(operand.startsWith("-")) {
+					operand = operand.substring(1);
+				}
+				else {
+					operand = "-" + operand;
+				}
+				
+				lblFormula.setText(operand);
+			
+			}
+		});
 		btnPosNeg.setBounds(10, 395, 50, 50);
 		contentPane.add(btnPosNeg);
 		
