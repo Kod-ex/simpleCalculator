@@ -57,10 +57,24 @@ public class Calculator extends JFrame {
 		contentPane.add(btnClear);
 		
 		JButton btnModulus = new JButton("%");
+		btnModulus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = lblFormula.getText();
+				lblFormula.setText(input + "%");
+			}
+		});
 		btnModulus.setBounds(130, 151, 50, 50);
 		contentPane.add(btnModulus);
 		
 		JButton btnDivide = new JButton("/");
+		btnDivide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = lblFormula.getText();
+				lblFormula.setText(input + "/");
+			}
+		});
 		btnDivide.setBounds(190, 151, 50, 50);
 		contentPane.add(btnDivide);
 		
@@ -98,6 +112,13 @@ public class Calculator extends JFrame {
 		contentPane.add(btn9);
 		
 		JButton btnMultiply = new JButton("X");
+		btnMultiply.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = lblFormula.getText();
+				lblFormula.setText(input + "x");
+			}
+		});
 		btnMultiply.setBounds(190, 212, 50, 50);
 		contentPane.add(btnMultiply);
 		
@@ -135,6 +156,13 @@ public class Calculator extends JFrame {
 		contentPane.add(btn6);
 		
 		JButton btnSubtract = new JButton("-");
+		btnSubtract.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = lblFormula.getText();
+				lblFormula.setText(input + "-");
+			}
+		});
 		btnSubtract.setBounds(190, 273, 50, 50);
 		contentPane.add(btnSubtract);
 		
@@ -172,6 +200,13 @@ public class Calculator extends JFrame {
 		contentPane.add(btn3);
 		
 		JButton btnAdd = new JButton("+");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = lblFormula.getText();
+				lblFormula.setText(input + "+");
+			}
+		});
 		btnAdd.setBounds(190, 334, 50, 50);
 		contentPane.add(btnAdd);
 		
@@ -191,6 +226,13 @@ public class Calculator extends JFrame {
 		contentPane.add(btn0);
 		
 		JButton btnEquals = new JButton("=");
+		btnEquals.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = lblFormula.getText();
+				lblFormula.setText(input + "=");
+			}
+		});
 		btnEquals.setBounds(190, 395, 50, 50);
 		contentPane.add(btnEquals);
 		
